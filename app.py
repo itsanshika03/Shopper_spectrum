@@ -452,7 +452,7 @@ if page == "🏠 Home":
 
     with left:
 
-        st.markdown("""
+        st.markdown(f"""
             <div style="
             background:#1E2D3D;
             padding:25px;
