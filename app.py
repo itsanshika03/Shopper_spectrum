@@ -607,7 +607,8 @@ if page == "🏠 Home":
             fig1,
             use_container_width=True,
             config={
-                "displayModeBar": False
+                "displayModeBar": False,
+                "scrollZoom": False    
             }
         )
     # =====================================================
@@ -645,7 +646,8 @@ if page == "🏠 Home":
             fig2,
             use_container_width=True,
             config={
-                "displayModeBar": False
+                "displayModeBar": False,
+                "scrollZoom": False
             }
         )
     
@@ -688,7 +690,8 @@ if page == "🏠 Home":
             fig3,
             use_container_width=True,
             config={
-                "displayModeBar": False
+                "displayModeBar": False,
+                "scrollZoom": False
             }
         )
     # =====================================================
@@ -733,7 +736,8 @@ if page == "🏠 Home":
             fig4,
             use_container_width=True,
             config={
-                "displayModeBar": False
+                "displayModeBar": False,
+                "scrollZoom": False
             }
         )
     
@@ -901,7 +905,14 @@ if page == "📊 Analytics Dashboard":
                 "Revenue: £%{y:,.0f}<extra></extra>"
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(
+            fig, 
+            use_container_width=True,
+            config={
+                "scrollZoom": False,
+                "displayModeBar": False
+            }
+        )
 
     with col2:
 
@@ -941,7 +952,14 @@ if page == "📊 Analytics Dashboard":
             textposition="outside"
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(
+            fig, 
+            use_container_width=True,
+            config={
+                "scrollZoom": False,
+                "displayModeBar": False
+            }
+        )    
 
     col3, col4 = st.columns(2)
 
@@ -986,7 +1004,14 @@ if page == "📊 Analytics Dashboard":
             textposition="outside"
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(
+            fig, 
+            use_container_width=True,
+            config={
+                "scrollZoom": False,
+                "displayModeBar": False
+            }
+        )
 
     with col4:    
         st.markdown("### 👑 Top Customers")
@@ -1030,8 +1055,15 @@ if page == "📊 Analytics Dashboard":
             textposition="outside"
         )
 
-        st.plotly_chart(fig, use_container_width=True)
- 
+        st.plotly_chart(
+            fig,
+            use_container_width=True,
+            config={
+                "scrollZoom": False,
+                "displayModeBar": False
+            }
+        )
+
     st.markdown("---")
     st.subheader("💡 Key Business Insights")
 
@@ -1883,7 +1915,10 @@ if page == "🎯 Product Recommendation":
         st.plotly_chart(
             fig,
             use_container_width=True,
-            config={"displayModeBar": False}
+            config={
+                "displayModeBar": False,
+                "scrollZoom": False
+            }
         )
 
         st.markdown("---")
