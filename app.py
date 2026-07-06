@@ -209,6 +209,7 @@ logo = Image.open("assets/logo.png")
 # ==========================================
 
 df = pd.read_csv("online_retail.csv", encoding="ISO-8859-1")
+
 # ==========================================
 # Create Clean Dataset (Same as Training)
 # ==========================================
@@ -235,20 +236,26 @@ df_clean["TotalAmount"] = (
 
 kmeans = joblib.load("kmeans_model.pkl")
 scaler = joblib.load("scaler.pkl")
-rfm = joblib.load("rfm_data.pkl")
+rfm = joblib.load("rfm_data.pkl") 
 
-# Build similarity matrix dynamically
-customer_product = pd.crosstab(
-    df_clean["CustomerID"],
-    df_clean["StockCode"]
+# ==========================================
+# Build Product Similarity Matrix
+# ==========================================
+
+customer_product = df_clean.pivot_table(
+    index="CustomerID",
+    columns="StockCode",
+    values="Quantity",
+    aggfunc="sum",
+    fill_value=0
 )
 
-similarity = cosine_similarity(customer_product)
+similarity = cosine_similarity(customer_product.T)
 
 similarity_df = pd.DataFrame(
     similarity,
-    index=customer_product.index,
-    columns=customer_product.index
+    index=customer_product.columns,
+    columns=customer_product.columns
 )
 
 # ==========================================
