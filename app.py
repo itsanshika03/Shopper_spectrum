@@ -3,6 +3,7 @@ import joblib
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+from sklearn.metrics.pairwise import cosine_similarity
 from PIL import Image
 
 # ==========================================
@@ -234,8 +235,21 @@ df_clean["TotalAmount"] = (
 
 kmeans = joblib.load("kmeans_model.pkl")
 scaler = joblib.load("scaler.pkl")
-similarity_df = joblib.load("similarity.pkl")
 rfm = joblib.load("rfm_data.pkl")
+
+# Build similarity matrix dynamically
+customer_product = pd.crosstab(
+    df_clean["CustomerID"],
+    df_clean["StockCode"]
+)
+
+similarity = cosine_similarity(customer_product)
+
+similarity_df = pd.DataFrame(
+    similarity,
+    index=customer_product.index,
+    columns=customer_product.index
+)
 
 # ==========================================
 # KPI Metrics
