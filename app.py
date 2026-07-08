@@ -608,7 +608,8 @@ if page == "🏠 Home":
             use_container_width=True,
             config={
                 "displayModeBar": False,
-                "scrollZoom": False    
+                "scrollZoom": False,
+                "responsive": True    
             }
         )
     # =====================================================
@@ -647,7 +648,8 @@ if page == "🏠 Home":
             use_container_width=True,
             config={
                 "displayModeBar": False,
-                "scrollZoom": False
+                "scrollZoom": False,
+                "responsive": True
             }
         )
     
@@ -691,7 +693,8 @@ if page == "🏠 Home":
             use_container_width=True,
             config={
                 "displayModeBar": False,
-                "scrollZoom": False
+                "scrollZoom": False,
+                "responsive": True
             }
         )
     # =====================================================
@@ -737,7 +740,8 @@ if page == "🏠 Home":
             use_container_width=True,
             config={
                 "displayModeBar": False,
-                "scrollZoom": False
+                "scrollZoom": False,
+                "responsive": True
             }
         )
     
@@ -910,7 +914,8 @@ if page == "📊 Analytics Dashboard":
             use_container_width=True,
             config={
                 "scrollZoom": False,
-                "displayModeBar": False
+                "displayModeBar": False,
+                "responsive": True
             }
         )
 
@@ -957,7 +962,8 @@ if page == "📊 Analytics Dashboard":
             use_container_width=True,
             config={
                 "scrollZoom": False,
-                "displayModeBar": False
+                "displayModeBar": False,
+                "responsive": True
             }
         )    
 
@@ -1009,7 +1015,8 @@ if page == "📊 Analytics Dashboard":
             use_container_width=True,
             config={
                 "scrollZoom": False,
-                "displayModeBar": False
+                "displayModeBar": False,
+                "responsive": True
             }
         )
 
@@ -1060,7 +1067,8 @@ if page == "📊 Analytics Dashboard":
             use_container_width=True,
             config={
                 "scrollZoom": False,
-                "displayModeBar": False
+                "displayModeBar": False,
+                "responsive": True
             }
         )
 
@@ -1917,7 +1925,8 @@ if page == "🎯 Product Recommendation":
             use_container_width=True,
             config={
                 "displayModeBar": False,
-                "scrollZoom": False
+                "scrollZoom": False,
+                "responsive": True
             }
         )
 
@@ -1967,17 +1976,26 @@ elif page == "📈 Business Insights":
 
     st.subheader("Key Findings")
 
-    st.success("""
-    ✅ Premium and VIP customers contribute the highest revenue.
+    st.markdown("""
+    <div style="
+    background-color:#143d24;
+    padding:18px;
+    border-radius:10px;
+    color:#b7ffbf;
+    font-size:17px;
+    line-height:1.9;
+    ">
 
-    ✅ Regular customers form the largest customer segment.
+    <ul style="margin:0;padding-left:22px;">
+    <li>Premium and VIP customers contribute the highest revenue.</li>
+    <li>Regular customers form the largest customer segment.</li>
+    <li>At Risk customers require targeted retention campaigns.</li>
+    <li>Product recommendations can increase cross-selling opportunities.</li>
+    <li>Understanding customer behavior helps improve marketing effectiveness.</li>
+    </ul>
 
-    ✅ At Risk customers require targeted retention campaigns.
-
-    ✅ Product recommendations can increase cross-selling opportunities.
-
-    ✅ Understanding customer behavior helps improve marketing effectiveness.
-    """)
+    </div>
+    """, unsafe_allow_html=True)
 
     st.subheader("Business Recommendations")
 
