@@ -389,7 +389,7 @@ if page == "🏠 Home":
     font-size=44px;
     font-weight=800;
     ">
-    🛍 Shopper Spectrum
+    🛒 Shopper Spectrum
     </h1>
 
     <h4 style="
